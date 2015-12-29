@@ -1,7 +1,7 @@
 ## Domain Suggestions Addon for WHMCS
 
-*To use this Addon you need a MrDomain API account. Read the [https://dev.mrdomain.com](online
-documentation) for more information.*
+*To use this Addon you need a MrDomain API account. Read the [online documentation](https://dev.mrdomain.com)
+for more information.*
 
 This addon adds suggestions for domain registration provided by the MrDomain API on your WHMCS.
 
