@@ -64,6 +64,10 @@ function ddsuggests_get( $key )
 			`key` = '$key'
 	");
 	
+	if( mysql_num_rows( $settings ) == 0 ){
+		return false;
+	}
+	
 	$result = mysql_fetch_array( $settings, MYSQL_ASSOC );
 	
 	return $result['value'];
@@ -80,7 +84,7 @@ function ddsuggests_set( $key, $value )
 {
 	$exists = ddsuggests_get( $key );
 	
-	if( empty( $exists )){
+	if( $exists === false ){
 		$create = full_query("
 			INSERT INTO `mod_ddsuggests_settings` (
 				`key`,
