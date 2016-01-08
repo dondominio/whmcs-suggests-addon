@@ -16,15 +16,18 @@ require_once( __DIR__ . '/../../../init.php' );
 require_once( __DIR__ . '/ddsuggests_utils.php' );
 require_once( __DIR__ . '/lib/sdk/DonDominioAPI.php' );
 
-$captcha = md5( $_REQUEST['captcha'] );
-
-if( $captcha != $_SESSION['captchaValue'] ){
-	die( json_encode( array( 'error' => '1', 'reason' => 'captcha_failed' )));
+if( !array_key_exists( 'uid', $_SESSION ) || !$_SESSION['uid'] ){
+	$captcha = md5( $_REQUEST['captcha'] );
+	
+	if( $captcha != $_SESSION['captchaValue'] ){
+		die( json_encode( array( 'error' => '1', 'reason' => 'captcha_failed' )));
+	}
 }
 
 $dd = new \DonDominioAPI( array(
 	'apiuser' => ddsuggests_get( 'api_username' ),
 	'apipasswd' => ddsuggests_get( 'api_password' ),
+	'endpoint' => 'https://simple-api.dondominio.net',
 	'userAgent' => array(
 		'DomainSuggestionsAddonForWHMCS' => ddsuggests_getVersion(),
 		'WHMCS' => ddsuggests_get_whmcs_version()

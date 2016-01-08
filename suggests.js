@@ -54,11 +54,26 @@ $( document ).ready( function( e )
  */
 function loadSuggestions( e )
 {	
+	$( "#invalidDomainError" ).addClass( "hidden" );
+	$( "#searchTermRequired" ).addClass( "hidden" );
+	
 	var search = $( "#inputDomain" ).val();
 	var captcha_code = $( "#inputCaptcha" ).val();
 	
-	if( !search || captcha_code.trim().length == 0 ){
+	if( !search ){
+		if( e != null ){
+			$( "#searchTermRequired" ).removeClass( "hidden" );
+		}
+		
 		return false;
+	}
+	
+	if( captcha_code ){
+		if( captcha_code.trim().length == 0 ){
+			$( "#invalidDomainError" ).removeClass( "hidden" );
+			
+			return false;
+		}
 	}
 	
 	var parent = $( "#stepResults").parent();
@@ -71,6 +86,12 @@ function loadSuggestions( e )
 		data: "text=" + search + "&captcha=" + $( "#inputCaptcha" ).val(),
 		dataType: "json",
 		success: function( data ){
+			if( data.error == "1" && data.reason == "captcha_failed" ){
+				$( "#invalidDomainError" ).removeClass( "hidden" );
+				
+				return false;
+			}
+			
 			var table = ich.suggestions_template({
 				suggestions: data
 			});
