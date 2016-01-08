@@ -25,7 +25,7 @@ function ddsuggests_config()
 	$config = array(
 		'name'			=> 'DonDominio Domain Suggestions',
 		'description'	=> 'Suggests more domains to purchase',
-		'version'		=> '1.0',
+		'version'		=> ddsuggests_getVersion(),
 		'author'		=> 'DonDominio',
 		'language'		=> 'English',
 		'fields'		=> array()
