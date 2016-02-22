@@ -1,33 +1,11 @@
-## Domain Suggestions Addon for WHMCS
+# Domain Suggestions Addon for WHMCS
 
-*To use this Addon you need a MrDomain API account. Read the [online documentation](https://dev.mrdomain.com)
-for more information.*
+This addon has been deprecated. This functionality is now built in the [MrDomain Addon for WHMCS](https://github.com/dondominio/whmcs-addon).
 
-This addon adds suggestions for domain registration provided by the MrDomain API on your WHMCS.
+We encourage everyone to disable this Addon on their WHMCS installation and install, or update, the MrDomain Addon for WHMCS.
 
-Follow the installation instructions carefully. To use with templates other than the default
-WHMCS 6.x one, follow the integration instructions.
+# Plugin de sugerencias de dominio para WHMCS
 
->**Please note**
->This addon includes support for the default WHMCS 6.x template. For use with other templates
->or custom templates some coding and adjustments are needed.
+Este plugin ha sido declarado obsoleto. Su funcionalidad está incorporada ahora en el [Plugin para WHMCS de DonDominio](https://github.com/dondominio/whmcs-addon).
 
-For installation instructions and guides, visit the documentation for this addon on
-[the MrDomain developer center](https://dev.mrdomain.com).
-
-## Módulo de sugerencias de dominios para WHMCS
-
-*Para usar este módulo necesitas una cuenta de API de DonDominio. Consulta la
-[documentación online](https://dev.dondominio.com) para más información.*
-
-Este módulo añade sugerencias de dominios proporcionadas por la API de DonDominio a WHMCS.
-
-Sigue las instrucciones de instalación cuidadosamente. Para usarlo con otras plantillas a parte 
-de la plantilla por defecto de WHMCS 6.x consulta las instrucciones de integración.
-
->**Atención**
->Este módulo incluye soporte para la plantilla por defecto de WHMCS 6.x. Para usarlo con
->otras plantillas o plantillas personalizadas se requieren ajustes y código adicional.
-
-Para consultar las instrucciones de instalación y otras guías, visita la documentación del
-módulo en [el centro de desarrolladores de DonDominio](https://dev.dondominio.com).
+Recomendamos a todos los usuarios que desactiven este plugin en su instalación de WHMCS y que instalen, o actualicen, el Plugin para WHMCS de DonDominio.
